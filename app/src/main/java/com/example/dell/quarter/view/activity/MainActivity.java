@@ -2,7 +2,6 @@ package com.example.dell.quarter.view.activity;
 
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.dell.quarter.R;
@@ -16,12 +15,12 @@ import com.hjm.bottomtabbar.BottomTabBar;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private BottomTabBar  btn;
+    private BottomTabBar btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
         initview();
         initData();
         initbtn();

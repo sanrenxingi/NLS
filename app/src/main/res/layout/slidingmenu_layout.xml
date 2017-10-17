@@ -2,16 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <!--头部-->
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="135dp"
-    android:background="@mipmap/dim_picture"
+    android:background="@mipmap/drawerlayout_background"
     >
 <ImageView
     android:id="@+id/side_imageview"
     android:layout_width="50dp"
     android:layout_height="50dp"
-    android:src="@mipmap/ic_launcher"
+    android:src="@mipmap/raw_1499936862"
     android:layout_centerVertical="true"
     android:layout_marginLeft="16dp"
     />
@@ -30,7 +31,7 @@
        android:id="@+id/side_gender"
        android:layout_width="30dp"
        android:layout_height="30dp"
-       android:src="@mipmap/woman"
+       android:src="@mipmap/sex"
        android:layout_alignParentRight="true"
        android:layout_centerVertical="true"
        android:layout_marginRight="16dp"
@@ -47,6 +48,190 @@
         android:layout_marginLeft="15dp"
         android:textSize="15sp"/>
 </RelativeLayout>
+    <!--我的关注-->
+<LinearLayout
+    android:id="@+id/side_my_interest"
+    android:layout_margin="16dp"
 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/raw_1499933216"
+        />
+<TextView
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:text="我的关注"
+    android:layout_marginLeft="30dp"
+    android:textSize="30sp"
+    android:layout_gravity="center"
+    />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/raw_1499943790"
+        />
+</LinearLayout>
+    <!--我的收藏-->
+    <LinearLayout
+        android:id="@+id/side_my_collection"
+        android:layout_margin="16dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/raw_1499947358"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="我的收藏"
+            android:layout_marginLeft="30dp"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/raw_1499943790"
+            />
+    </LinearLayout>
+    <!--搜索好友-->
+    <LinearLayout
+        android:id="@+id/side_Search_for_friends"
+        android:layout_margin="16dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/raw_1499946865"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="搜索好友"
+            android:layout_marginLeft="30dp"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/raw_1499943790"
+            />
+    </LinearLayout>
+    <!--消息通知-->
+    <LinearLayout
+        android:id="@+id/side_message_notification"
+        android:layout_margin="16dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/raw_1499947389"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="消息通知"
+            android:layout_marginLeft="30dp"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/raw_1499943790"
+            />
+    </LinearLayout>
+<!--夜间模式-->
+    <LinearLayout
+        android:id="@+id/sice_night_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        >
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/bai"/>
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="夜间模式"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            />
+
+    </LinearLayout>
+    <!--我的作品和设置-->
+   <LinearLayout
+      android:layout_marginLeft="16dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+       <!--我的作品-->
+       <LinearLayout
+           android:id="@+id/side_my_work"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:src="@mipmap/raw_1499947056"
+             />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="我的作品"
+    android:textSize="20sp"
+    />
+
+       </LinearLayout>
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"/>
+       <!--设置-->
+       <LinearLayout
+           android:id="@+id/side_setting"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginRight="16dp"
+           android:orientation="vertical">
+           <ImageView
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:src="@mipmap/raw_1499947157"
+               />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="设置"
+               android:textSize="20sp"
+               />
+
+       </LinearLayout>
+
+   </LinearLayout>
 
 </LinearLayout>
