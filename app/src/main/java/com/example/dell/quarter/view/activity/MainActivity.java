@@ -18,15 +18,14 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
  * 作者  聂雁宾
  */
 public class MainActivity extends AppCompatActivity {
-
-    private BottomTabBar btn;
-    private BottomTabBar  btn;
     private ImageView touxiangimg;
+    private BottomTabBar bottomTabBar;
+    private SlidingMenu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         initview();
         initData();
         initbtn();
@@ -35,40 +34,37 @@ public class MainActivity extends AppCompatActivity {
         touxiangimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+          menu.showMenu();
             }
         });
     }
     private void initMenu() {
-        SlidingMenu menu=new SlidingMenu(this);
 //设置从哪里滑出
         menu.setMode(SlidingMenu.LEFT);
-
-        //设置模式
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        //设置模式,不允许侧滑
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
         menu.setShadowWidthRes(R.dimen.du);
         menu.setBehindOffsetRes(R.dimen.du);
         //设置渐入渐出的效果
         menu.setFadeDegree(0.35f);
         menu.attachToActivity(this,SlidingMenu.SLIDING_CONTENT);
-//        menu.setMenu(R.layout.item);
+        menu.setMenu(R.layout.slidingmenu_layout);
 
     }
 
     private void initData() {
-
+        menu = new SlidingMenu(this);
     }
     private void initview() {
-        btn =(BottomTabBar) findViewById(R.id.bottom_tab_bar);
+        bottomTabBar = (BottomTabBar) findViewById(R.id.bottom_tab_bar);
         touxiangimg = (ImageView) findViewById(R.id.touxiangimg);
     }
 
     private void initbtn() {
-        btn.init(getSupportFragmentManager())
+        bottomTabBar.init(getSupportFragmentManager())
                 .addTabItem("推荐", R.mipmap.ic_launcher, RecommendFragment.class)
                 .addTabItem("段子", R.mipmap.ic_launcher, CrossTalkFragment.class)
-                .addTabItem("视频", R.mipmap.ic_launcher, VideoFragment.class)
-        ;
+                .addTabItem("视频", R.mipmap.ic_launcher, VideoFragment.class);
 
 
     }
