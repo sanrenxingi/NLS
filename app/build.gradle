@@ -30,4 +30,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.2'
     testCompile 'junit:junit:4.12'
     compile 'com.hjm:BottomTabBar:1.0.0'
+    compile 'com.github.uncleleonfan:SlidingMenu:1.0.0'
 }
