@@ -2,7 +2,6 @@ package com.example.dell.quarter.view.activity;
 
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -20,13 +19,14 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private BottomTabBar btn;
     private BottomTabBar  btn;
     private ImageView touxiangimg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
         initview();
         initData();
         initbtn();
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        
+
     }
     private void initview() {
         btn =(BottomTabBar) findViewById(R.id.bottom_tab_bar);
