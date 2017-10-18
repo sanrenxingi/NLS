@@ -6,6 +6,8 @@ import com.example.dell.quarter.R;
 import com.example.dell.quarter.presenter.RegisterPresenter;
 import com.example.dell.quarter.view.interfaces.RegisterInterfaceP_V;
 
+import java.util.HashMap;
+
 public class RegisterActivity extends BaseActivity implements RegisterInterfaceP_V {
 
     private RegisterPresenter registerPresenter;
@@ -26,7 +28,9 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
     void initData() {
         registerPresenter = new RegisterPresenter();
         //逻辑判断方法
-        registerPresenter.loadDataFromServer();
+        HashMap<String,String> map =new HashMap<>();
+
+        registerPresenter.loadDataFromServer(map);
     }
 //找ID
     @Override

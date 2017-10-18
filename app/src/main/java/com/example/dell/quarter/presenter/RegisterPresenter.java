@@ -24,12 +24,7 @@ public RegisterPresenter(){
   registerHttp.onCallBack(this);
 }
     //处理数据方法
-    public void loadDataFromServer() {
-        HashMap<String,String> map=new HashMap<>();
-        map.put("userName","nyb");
-        map.put("userPassword","nyb123");
-        map.put("userPhone","17601627041");
-        map.put("userSex","男");
+    public void loadDataFromServer(HashMap<String,String> map) {
       registerHttp.doPost(Api.URL,map, RegisterBean.class);
     }
 //成功
