@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import com.example.dell.quarter.R;
 
+/**
+ * 引导页
+ */
 public class AuideActivity extends BaseActivity {
 
     private TextView tv;
