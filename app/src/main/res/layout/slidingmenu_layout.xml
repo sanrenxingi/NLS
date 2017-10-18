@@ -8,7 +8,7 @@
     android:layout_height="135dp"
     android:background="@mipmap/drawerlayout_background"
     >
-<ImageView
+<de.hdodenhof.circleimageview.CircleImageView
     android:id="@+id/side_imageview"
     android:layout_width="50dp"
     android:layout_height="50dp"
