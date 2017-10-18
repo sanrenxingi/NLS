@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 视频
  * Created by dell on 2017/10/17.
  * 视频类
  */

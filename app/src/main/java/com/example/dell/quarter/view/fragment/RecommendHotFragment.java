@@ -5,14 +5,17 @@ import android.view.View;
 import com.example.dell.quarter.R;
 
 /**
- * Created by dell on 2017/10/17.
- * 段子
+ * 类描述：推荐下的热门界面
+ * 姓名 ：刘希鑫
  */
 
-public class CrossTalkFragment extends FatherFragment{
+public class RecommendHotFragment extends FatherFragment{
+
+//    private Banner banner;
 
     @Override
     protected void initView(View view) {
+//        banner = view.findViewById(R.id.banner);
 
     }
 
@@ -23,6 +26,6 @@ public class CrossTalkFragment extends FatherFragment{
 
     @Override
     int inLayout() {
-        return R.layout.fragment_recommend_attention;
+        return R.layout.fragment_recommend_hot;
     }
 }
