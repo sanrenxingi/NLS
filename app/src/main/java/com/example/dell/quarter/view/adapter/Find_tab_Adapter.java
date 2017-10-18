@@ -8,35 +8,31 @@ import java.util.List;
 
 /**
  * Created by cg on 2015/9/26.
- * tablayout和fragment的adapter类
  */
 public class Find_tab_Adapter extends FragmentPagerAdapter {
+    private List<String> title;
+    private List<Fragment> views;
 
-    private List<Fragment> list_fragment;                         //fragment列表
-    private List<String> list_Title;                              //tab名的列表
-
-
-
-    public Find_tab_Adapter(FragmentManager fm,List<Fragment> list_fragment,List<String> list_Title) {
+    public Find_tab_Adapter(FragmentManager fm, List<String> title, List<Fragment> views) {
         super(fm);
-        this.list_fragment = list_fragment;
-        this.list_Title = list_Title;
+        this.title = title;
+        this.views = views;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return list_fragment.get(position);
+        return views.get(position);
     }
 
     @Override
     public int getCount() {
-        return list_Title.size();
+        return views.size();
     }
 
-    //此方法用来显示tab上的名字
+
+    //配置标题的方法
     @Override
     public CharSequence getPageTitle(int position) {
-
-        return list_Title.get(position % list_Title.size());
+        return title.get(position);
     }
 }

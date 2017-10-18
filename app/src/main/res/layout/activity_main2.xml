@@ -38,8 +38,8 @@
     >
     <com.hjm.bottomtabbar.BottomTabBar
         android:id="@+id/bottom_tab_bar"
-        android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         hjm:tab_divider_background="#c0c0c0"
         hjm:tab_divider_height="1dp"
         hjm:tab_font_size="6sp"
