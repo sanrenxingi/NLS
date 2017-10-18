@@ -64,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
         bottomTabBar.init(getSupportFragmentManager())
                 .addTabItem("推荐", R.mipmap.ic_launcher, RecommendFragment.class)
                 .addTabItem("段子", R.mipmap.ic_launcher, CrossTalkFragment.class)
-                .addTabItem("视频", R.mipmap.ic_launcher, VideoFragment.class);
+                .addTabItem("视频", R.mipmap.ic_launcher, VideoFragment.class)
+
+        ;
 
 
     }
