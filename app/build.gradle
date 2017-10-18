@@ -31,4 +31,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.hjm:BottomTabBar:1.0.0'
     compile 'com.github.uncleleonfan:SlidingMenu:1.0.0'
+    compile 'com.android.support:design:22.2.0'
 }

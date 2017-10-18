@@ -5,6 +5,7 @@ package com.example.dell.quarter.modle.bean;
  */
 
 public class RegisterBean {
+
     /**
      * code : 200
      */
