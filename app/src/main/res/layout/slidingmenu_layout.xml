@@ -6,6 +6,7 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="135dp"
+    android:id="@+id/rl"
     android:background="@mipmap/drawerlayout_background"
     >
 <de.hdodenhof.circleimageview.CircleImageView
@@ -205,6 +206,7 @@
       android:layout_marginLeft="16dp"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:layout_marginTop="50dp"
        android:orientation="horizontal">
        <!--我的作品-->
        <LinearLayout

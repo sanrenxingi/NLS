@@ -28,13 +28,13 @@ private Handler handler=new Handler(){
         tv.setText(i+"秒后");
         i--;
 
-        handler.sendEmptyMessageDelayed(900,1500);
+        handler.sendEmptyMessageDelayed(900,1000);
     }
 };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        handler.sendEmptyMessageDelayed(900,1500);
+        handler.sendEmptyMessageDelayed(900,1000);
     }
 
     @Override

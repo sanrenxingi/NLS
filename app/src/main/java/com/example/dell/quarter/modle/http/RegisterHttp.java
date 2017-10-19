@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import com.example.dell.quarter.modle.bean.RegisterBean;
 import com.example.dell.quarter.view.interfaces.RegisterInterfaceP_M;
 import com.google.gson.Gson;
 
@@ -29,7 +30,8 @@ public class RegisterHttp<T> {
         @Override
         public void handleMessage(Message msg) {
             T t = (T) msg.obj;
-            P_M.onSuccess(t);
+           P_M.onSuccess(t);
+
         }
     };
     //get网络请求
