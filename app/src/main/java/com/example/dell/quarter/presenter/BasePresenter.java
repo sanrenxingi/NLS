@@ -1,6 +1,5 @@
 package com.example.dell.quarter.presenter;
 
-import com.example.dell.quarter.modle.http.RegisterHttp;
 import com.example.dell.quarter.view.interfaces.IMvpView;
 
 /**

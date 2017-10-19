@@ -3,7 +3,7 @@ package com.example.dell.quarter.presenter;
 import android.util.Log;
 
 import com.example.dell.quarter.modle.bean.RegisterBean;
-import com.example.dell.quarter.modle.http.RegisterHttp;
+import com.example.dell.quarter.modle.http.HttpUtils;
 import com.example.dell.quarter.modle.utils.Api;
 import com.example.dell.quarter.view.activity.RegisterActivity;
 import com.example.dell.quarter.view.interfaces.RegisterInterfaceP_M;
@@ -16,13 +16,13 @@ import java.util.HashMap;
 
 public class RegisterPresenter extends BasePresenter implements RegisterInterfaceP_M<RegisterBean> {
 
-    private final RegisterHttp registerHttp;
+    private final HttpUtils registerHttp;
     private RegisterActivity view;
 
 
     //无参构造
 public RegisterPresenter(){
-    registerHttp = new RegisterHttp();
+    registerHttp = new HttpUtils();
   registerHttp.onCallBack(this);
 }
     //处理数据方法

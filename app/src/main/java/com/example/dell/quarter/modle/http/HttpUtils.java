@@ -23,7 +23,7 @@ import okhttp3.Response;
  * Created by dell on 2017/10/17.
  */
 
-public class RegisterHttp<T> {
+public class HttpUtils<T> {
     private RegisterInterfaceP_M P_M;
     private OkHttpClient client;
     private Handler handler = new Handler() {
