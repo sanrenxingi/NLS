@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/zhuce"
     tools:context="com.example.dell.quarter.view.activity.RegisterActivity">
-
-</android.support.constraint.ConstraintLayout>
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/etzh"
+    android:hint=" 请输入手机号"
+    android:layout_marginTop="154dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etmm"
+        android:hint="请输入密码"
+        android:layout_below="@+id/etzh"
+        android:layout_centerHorizontal="true" />
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnzc"
+    android:text="注册"
+    android:layout_below="@+id/etmm"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="15dp" />
+</RelativeLayout>

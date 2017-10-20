@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:hjm="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,13 +9,22 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/rl"
         >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            xmlns:circleimageview="http://schemas.android.com/apk/res-auto"
             android:id="@+id/touxiangimg"
-            android:layout_alignParentLeft="true"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@mipmap/raw_1499936862"
+            circleimageview:civ_border_color="@android:color/holo_red_light"
+            circleimageview:civ_border_overlay="false"
+            circleimageview:civ_border_width="2dp"
+            circleimageview:civ_fill_color="@android:color/holo_blue_light"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,27 +41,30 @@
             android:src="@mipmap/ic_launcher"/>
     </RelativeLayout>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
-    <com.hjm.bottomtabbar.BottomTabBar
-        android:id="@+id/bottom_tab_bar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        hjm:tab_divider_background="#c0c0c0"
-        hjm:tab_divider_height="1dp"
-        hjm:tab_font_size="6sp"
-        hjm:tab_img_font_padding="0dp"
-        hjm:tab_img_height="30dp"
-        hjm:tab_img_width="30dp"
-        hjm:tab_isshow_divider="true"
-        hjm:tab_padding_bottom="5dp"
-        hjm:tab_padding_top="8dp"
-        android:layout_alignParentBottom="true"
-        hjm:tab_selected_color="#ff8000"
-        hjm:tab_unselected_color="#c0c0c0"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl"
+        android:id="@+id/rlrl">
+    </RelativeLayout>
+        <com.hjm.bottomtabbar.BottomTabBar
+            android:layout_below="@+id/rlrl"
+            android:id="@+id/bottom_tab_bar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            hjm:tab_divider_background="#c0c0c0"
+            hjm:tab_divider_height="1dp"
+            hjm:tab_font_size="6sp"
+            hjm:tab_img_font_padding="0dp"
+            hjm:tab_img_height="30dp"
+            hjm:tab_img_width="30dp"
+            hjm:tab_isshow_divider="true"
+            hjm:tab_padding_bottom="5dp"
+            hjm:tab_padding_top="8dp"
+            hjm:tab_selected_color="#ff8000"
+            hjm:tab_unselected_color="#c0c0c0"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+
 </RelativeLayout>
-</LinearLayout>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/a"
     tools:context="com.example.dell.quarter.view.activity.MainActivity">
 <RelativeLayout
     android:layout_width="match_parent"
@@ -45,13 +46,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="账号"
+                android:text="电话号"
                 />
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/loginetzh"
-                android:hint="请输入账号"/>
+                android:hint="请输入电话号"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,7 +64,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="账号"
+                android:text="密码"
                 />
             <EditText
                 android:layout_width="wrap_content"

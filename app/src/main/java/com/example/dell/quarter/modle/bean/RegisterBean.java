@@ -10,13 +10,13 @@ public class RegisterBean {
      * code : 200
      */
 
-    private int code;
+    private Object code;
 
-    public int getCode() {
+    public Object getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(Object code) {
         this.code = code;
     }
 }

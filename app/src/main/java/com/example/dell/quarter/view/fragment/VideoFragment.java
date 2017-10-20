@@ -1,7 +1,9 @@
 package com.example.dell.quarter.view.fragment;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,21 +20,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 视频
  * Created by dell on 2017/10/17.
  * 视频类
+ * 作者：聂雁宾
  */
 
-public class VideoFragment extends Fragment{
+public class VideoFragment extends FatherFragment{
     private TabLayout mtab;
     ViewPager viewPager;
     private List<Fragment> arr=new ArrayList<>();
     List<String> list=new ArrayList<>();
-    @Nullable
+
+//找ID
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-          View view=View.inflate(getActivity(), R.layout.videofragment_item,null);
-        mtab = view.findViewById(R.id.mtab);
+    protected void initView(View view) {
+        mtab =view.findViewById(R.id.mtab);
         viewPager =  view.findViewById(R.id.viewpager);
         mtab.addTab(mtab.newTab().setText("热门"));
         mtab.addTab(mtab.newTab().setText("附近"));
@@ -57,10 +60,18 @@ public class VideoFragment extends Fragment{
                 return list.get(position);
             }
         });
+    }
+//new数据
+    @Override
+    void inDate() {
 
-        return view;
+
     }
 
+    @Override
+    int inLayout() {
+        return  R.layout.videofragment_item;
+    }
 
 
 }

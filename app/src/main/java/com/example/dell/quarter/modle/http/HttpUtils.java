@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import com.example.dell.quarter.modle.bean.RegisterBean;
 import com.example.dell.quarter.view.interfaces.RegisterInterfaceP_M;
 import com.google.gson.Gson;
 
@@ -22,14 +23,15 @@ import okhttp3.Response;
  * Created by dell on 2017/10/17.
  */
 
-public class RegisterHttp<T> {
+public class HttpUtils<T> {
     private RegisterInterfaceP_M P_M;
     private OkHttpClient client;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             T t = (T) msg.obj;
-            P_M.onSuccess(t);
+           P_M.onSuccess(t);
+
         }
     };
     //get网络请求

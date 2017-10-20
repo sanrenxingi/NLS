@@ -6,5 +6,5 @@ package com.example.dell.quarter.view.interfaces;
 
 public interface RegisterInterfaceP_M<T>{
     void onSuccess(T t);
-    void onError(int code,String str);
+    void onError(T t);
 }
