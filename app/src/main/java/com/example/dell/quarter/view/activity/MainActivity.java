@@ -2,10 +2,13 @@ package com.example.dell.quarter.view.activity;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.dell.quarter.R;
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private SlidingMenu menu;
     private BottomTabBar bottomTabBar;
     private RelativeLayout rl;
+    private LinearLayout night;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +58,11 @@ public class MainActivity extends AppCompatActivity {
         menu.setFadeDegree(0.35f);
         menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
         menu.setMenu(R.layout.slidingmenu_layout);
-        rl= menu.findViewById(R.id.rl);
-        //点击出现登录页面
-        rl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in=new Intent(MainActivity.this,LoginMainActivity.class);
-                startActivity(in);
-            }
-        });
+         //找到menu侧拉菜单中的控件
+        getMenuId();
+
+        //侧拉菜单中的控件点击事件
+       getOnClick();
     }
 
     private void initData() {
@@ -83,6 +83,44 @@ public class MainActivity extends AppCompatActivity {
                 .addTabItem("推荐", R.mipmap.tuijian_select, R.mipmap.tuijian_default, RecommendFragment.class)
                 .addTabItem("段子", R.mipmap.duanzi_select, R.mipmap.duanzi_default, CrossTalkFragment.class)
                 .addTabItem("视频", R.mipmap.video_select, R.mipmap.video_defaults, VideoFragment.class);
+
+    }
+    //找到控件
+    public void getMenuId() {
+        rl= menu.findViewById(R.id.rl);
+        night = menu.findViewById(R.id.sice_night_mode);
+    }
+//侧拉菜单中控件的点击事件
+    public void getOnClick() {
+        //点击出现登录页面
+        rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in=new Intent(MainActivity.this,LoginMainActivity.class);
+                startActivity(in);
+            }
+        });
+        //日夜间切换
+        night.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sha=getSharedPreferences("name",MODE_PRIVATE);
+                boolean  isNight=sha.getBoolean("night",false);
+                if (isNight){
+                    //白天模式
+
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    sha.edit().putBoolean("night",false).commit();
+//                    bu.setText("切换到夜间模式");
+                }else{
+
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    sha.edit().putBoolean("night",true).commit();
+//                    bu.setText("切换到白天模式");
+                }
+                recreate();//最后的这个绝对不能忘，不然切换回失效的
+            }
+        });
 
     }
 }
