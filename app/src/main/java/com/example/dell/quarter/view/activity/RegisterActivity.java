@@ -17,6 +17,10 @@ import com.example.dell.quarter.view.interfaces.RegisterInterfaceP_V;
 
 import java.util.HashMap;
 
+/**
+ * 聂雁宾
+ * 注册页面
+ */
 public class RegisterActivity extends BaseActivity implements RegisterInterfaceP_V<RegisterBean> {
 
     private RegisterPresenter registerPresenter;
@@ -25,27 +29,13 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
     private Button btn;
     private String phone;
     private String mima;
-//    private int i=2;
-//    private Handler handler=new Handler(){
-//        @Override
-//        public void handleMessage(Message msg) {
-//            super.handleMessage(msg);
-//            if(i==0){
-//                Intent intent=new Intent(RegisterActivity.this,LoginActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//            i--;
-//            handler.sendEmptyMessageDelayed(900,1000);
-//        }
-//    };
     private HashMap<String, String> map;
     private Object code;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+       //注册的点击事件
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,9 +89,6 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
     @Override
     public void onSuccess(RegisterBean registerBean) {
         code = registerBean.getCode();
-       /* Log.e("dasdadad","dasdadadada"+code);
-       String c1= (String) code;*/
-//        String c= (String) code;
 
         if(code.equals("200")){
             Toast.makeText(RegisterActivity.this,"注册成功",Toast.LENGTH_SHORT).show();
@@ -110,11 +97,6 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
         } else{
             Toast.makeText(RegisterActivity.this,"手机号已被注册",Toast.LENGTH_SHORT).show();
         }
-
-
-
-
-//        handler.sendEmptyMessageDelayed(900,1000);
         Log.e("onSuccessonSuccess","onSuccessonSuccess"+ registerBean.getCode());
     }
 

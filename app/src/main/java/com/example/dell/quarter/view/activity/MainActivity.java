@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.dell.quarter.R;
 import com.example.dell.quarter.view.fragment.CrossTalkFragment;
@@ -17,6 +18,7 @@ import com.example.dell.quarter.view.fragment.RecommendFragment;
 import com.example.dell.quarter.view.fragment.VideoFragment;
 import com.hjm.bottomtabbar.BottomTabBar;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
  * 作者  聂雁宾
@@ -27,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private SlidingMenu menu;
     private BottomTabBar bottomTabBar;
     private RelativeLayout rl;
-    private LinearLayout night;
+    private ImageView chuangzuoimg;
+    private View night;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,11 +61,15 @@ public class MainActivity extends AppCompatActivity {
         menu.setFadeDegree(0.35f);
         menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
         menu.setMenu(R.layout.slidingmenu_layout);
-         //找到menu侧拉菜单中的控件
-        getMenuId();
-
-        //侧拉菜单中的控件点击事件
-       getOnClick();
+        rl= menu.findViewById(R.id.rl);
+        //点击出现登录页面
+        rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in=new Intent(MainActivity.this,LoginMainActivity.class);
+                startActivity(in);
+            }
+        });
     }
 
     private void initData() {
@@ -73,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     private void initview() {
         bottomTabBar = (BottomTabBar) findViewById(R.id.bottom_tab_bar);
         touxiangimg = (ImageView) findViewById(R.id.touxiangimg);
+        chuangzuoimg = (ImageView) findViewById(R.id.chuangzuoimg);
 
 
     }

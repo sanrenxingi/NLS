@@ -4,29 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/sex"
+    android:background="@mipmap/nybimg"
     tools:context="com.example.dell.quarter.view.activity.RegisterActivity">
-<EditText
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/etzh"
-    android:hint=" 请输入手机号"
-    android:layout_marginTop="154dp"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etmm"
-        android:hint="请输入密码"
-        android:layout_below="@+id/etzh"
-        android:layout_centerHorizontal="true" />
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/btnzc"
-    android:text="注册"
-    android:layout_below="@+id/etmm"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="15dp" />
+    <LinearLayout android:id="@+id/loginPanel"
+        android:background="@drawable/background_login_div"
+        android:layout_height="300dp"
+        android:layout_width="400dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+
+
+        <EditText android:id="@+id/etzh"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="请输入您的手机号"
+            android:singleLine="true"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp">
+
+            <requestFocus/>
+
+        </EditText>
+
+        <EditText android:id="@+id/etmm"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="请输入您的密码"
+            android:singleLine="true"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:password="true"/>
+
+        <Button android:id="@+id/btnzc"
+            android:background="@drawable/background_button_div"
+            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_marginTop="18dp"
+            android:text="注册"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
 </RelativeLayout>

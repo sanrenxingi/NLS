@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.example.dell.quarter.R;
 import com.example.dell.quarter.view.adapter.Find_tab_Adapter;
+import com.example.dell.quarter.view.adapter.VideoAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +27,8 @@ import java.util.List;
  */
 
 public class VideoFragment extends FatherFragment{
-    private TabLayout mtab;
-    ViewPager viewPager;
+    private TabLayout tabLayout;
+    private ViewPager vp;
     private List<Fragment> arr=new ArrayList<>();
     List<String> list=new ArrayList<>();
 
@@ -35,29 +36,31 @@ public class VideoFragment extends FatherFragment{
     @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     @Override
     protected void initView(View view) {
-        mtab =view.findViewById(R.id.mtab);
-        viewPager =  view.findViewById(R.id.viewpager);
-        mtab.addTab(mtab.newTab().setText("热门"));
-        mtab.addTab(mtab.newTab().setText("附近"));
-        arr.add(new VideoHotFragment());
-        arr.add(new VideoNearbyFragment());
-        mtab.setupWithViewPager(viewPager);
-        list.add("热门");
-        list.add("附近");
-        viewPager.setAdapter(new FragmentPagerAdapter(getActivity().getSupportFragmentManager()) {
+        //初始化数据
+
+            tabLayout =  view.findViewById(R.id.tab);
+            vp =  view.findViewById(R.id.vp);
+            tabLayout.addTab(tabLayout.newTab().setText("热门"));
+            tabLayout.addTab(tabLayout.newTab().setText("附近"));
+            tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        //tablayout联动viewpage
+        VideoAdapter adapter=new VideoAdapter(getActivity().getSupportFragmentManager(), tabLayout.getTabCount());
+        vp.setAdapter(adapter);
+        vp.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public Fragment getItem(int position) {
-                return arr.get(position);
+            public void onTabSelected(TabLayout.Tab tab) {
+                vp.setCurrentItem(tab.getPosition());
             }
 
             @Override
-            public int getCount() {
-                return arr.size();
+            public void onTabUnselected(TabLayout.Tab tab) {
+
             }
 
             @Override
-            public CharSequence getPageTitle(int position) {
-                return list.get(position);
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
     }

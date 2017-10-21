@@ -3,52 +3,52 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!--头部-->
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="135dp"
-    android:id="@+id/rl"
-    android:background="@mipmap/drawerlayout_background"
-    >
-<de.hdodenhof.circleimageview.CircleImageView
-    android:id="@+id/side_imageview"
-    android:layout_width="50dp"
-    android:layout_height="50dp"
-    android:src="@mipmap/raw_1499936862"
-    android:layout_centerVertical="true"
-    android:layout_marginLeft="16dp"
-    />
-    <TextView
-        android:id="@+id/side_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/side_imageview"
-        android:text="椰汁奶茶"
-        android:textColor="#FFFFFF"
-        android:layout_marginLeft="15dp"
-        android:textSize="20sp"
-        />
-   <ImageView
-       android:id="@+id/side_gender"
-       android:layout_width="30dp"
-       android:layout_height="30dp"
-       android:src="@mipmap/sex"
-       android:layout_alignParentRight="true"
-       android:layout_centerVertical="true"
-       android:layout_marginRight="16dp"
-       />
-    <TextView
-        android:id="@+id/side_Signature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       android:layout_alignParentBottom="true"
-       android:layout_marginBottom="16dp"
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:background="@mipmap/drawerlayout_background">
 
-        android:text="个性签名"
-        android:textColor="#FFFFFF"
-        android:layout_marginLeft="15dp"
-        android:textSize="15sp"/>
-</RelativeLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/side_imageview"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@mipmap/raw_1499936862" />
+
+        <TextView
+            android:id="@+id/side_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/side_imageview"
+            android:text="椰汁奶茶"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/side_gender"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/sex" />
+
+        <TextView
+            android:id="@+id/side_Signature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+
+            android:layout_marginLeft="15dp"
+            android:text="个性签名"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+    </RelativeLayout>
     <!--我的关注-->
 <LinearLayout
     android:id="@+id/side_my_interest"

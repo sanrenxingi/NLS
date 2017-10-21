@@ -21,11 +21,14 @@ import okhttp3.Response;
 
 /**
  * Created by dell on 2017/10/17.
+ * M层，实现与P层接收，传送数据
+ * 聂雁宾
  */
 
 public class HttpUtils<T> {
     private RegisterInterfaceP_M P_M;
     private OkHttpClient client;
+    //Handler发送消息
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -68,9 +71,11 @@ public class HttpUtils<T> {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 Log.e("aaa", response.toString());
+                //判断是否有数据
                 if (response.isSuccessful()) {
                     String value = response.body().string();
                     T t = new Gson().fromJson(value, clazz);
+                    //将数据传到handler里面
                     Message msg = handler.obtainMessage();
                     msg.obj = t;
                     handler.sendMessage(msg);
@@ -111,6 +116,33 @@ public class HttpUtils<T> {
         });
 
     }
+    //视频热门，附近get请求
+    public void doVideoHotget(String url, final Class<T> clazz) {
+        client = new OkHttpClient.Builder()
+                .build();
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    String result = response.body().string();
+                    T t = new Gson().fromJson(result, clazz);
+                    Message msg = handler.obtainMessage();
+                    msg.obj = t;
+                    handler.sendMessage(msg);
+                }
+            }
+        });
+
+    }
+    //与P层关联
     public void onCallBack(RegisterInterfaceP_M call) {
         this.P_M = call;
     }

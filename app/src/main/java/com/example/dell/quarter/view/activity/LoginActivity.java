@@ -18,6 +18,7 @@ import java.util.HashMap;
 
 /**
  * 聂雁宾
+ * 登录页面
  */
 public class LoginActivity extends BaseActivity implements RegisterInterfaceP_V{
 
@@ -58,11 +59,7 @@ public class LoginActivity extends BaseActivity implements RegisterInterfaceP_V{
                         etzh.setText("");
                         etmm.setText("");
                     }
-
                 }
-
-
-
             }
         });
 
@@ -97,10 +94,9 @@ public class LoginActivity extends BaseActivity implements RegisterInterfaceP_V{
             Log.e("onSuccessonSuccess","onSuccessonSuccess聂雁宾"+loginBean.getUser().getUserPhone());
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
+            finish();
         }
-
     }
-
     @Override
     public void onError(Object o) {
 

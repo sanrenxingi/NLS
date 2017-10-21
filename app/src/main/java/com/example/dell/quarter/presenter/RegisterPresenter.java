@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 public class RegisterPresenter extends BasePresenter implements RegisterInterfaceP_M<RegisterBean> {
 
-    private final HttpUtils registerHttp;
+    private  HttpUtils registerHttp;
     private RegisterActivity view;
 
 

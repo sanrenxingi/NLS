@@ -2,6 +2,8 @@ package com.example.dell.quarter.modle.bean;
 
 /**
  * Created by dell on 2017/10/19.
+ * 登录bean
+ * 聂雁宾
  */
 
 public class LoginBean {

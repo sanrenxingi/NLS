@@ -2,6 +2,8 @@ package com.example.dell.quarter.modle.bean;
 
 /**
  * Created by dell on 2017/10/17.
+ * 注册bean
+ * 聂雁宾
  */
 
 public class RegisterBean {

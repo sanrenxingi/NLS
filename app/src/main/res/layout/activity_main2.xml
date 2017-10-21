@@ -37,8 +37,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/chuangzuoimg"
+            android:padding="10dp"
+            android:src="@mipmap/write"
+            android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
     <RelativeLayout
