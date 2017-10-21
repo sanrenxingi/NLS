@@ -1,8 +1,11 @@
 package com.example.dell.quarter.view.fragment;
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.dell.quarter.R;
+import com.example.dell.quarter.view.adapter.RecommendAttentionAdapter;
 
 /**
  * 类描述：推荐下的关注界面fragment
@@ -10,9 +13,15 @@ import com.example.dell.quarter.R;
  */
 
 public class RecommendAttentionFragment extends FatherFragment{
+
+    private RecyclerView recyclerView;
+
     @Override
     protected void initView(View view) {
-
+        recyclerView = view.findViewById(R.id.recommend_attent_recyc);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        RecommendAttentionAdapter adapter=new RecommendAttentionAdapter(getActivity());
+        recyclerView.setAdapter(adapter);
     }
 
     @Override

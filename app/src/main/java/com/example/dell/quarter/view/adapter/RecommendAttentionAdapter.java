@@ -111,6 +111,8 @@ public class RecommendAttentionAdapter extends RecyclerView.Adapter{
     public int getItemCount() {
         return 6;
     }
+
+
     public class ViewHodle extends RecyclerView.ViewHolder{
 
         private final ImageView jubap; 

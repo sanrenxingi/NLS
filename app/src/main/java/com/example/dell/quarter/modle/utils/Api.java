@@ -8,6 +8,9 @@ package com.example.dell.quarter.modle.utils;
 
 public class Api {
     //注册
+    public static String URL="http://172.17.29.27/quarter/user/addUser";
+    //热门查询接口
+    public static String RECOMMEND="http://172.17.29.27/quarter/user/findHot";
     public static String REGISTER="http://172.17.29.27/quarter/user/addUser?";
     //登录
     public static String Login="http://172.17.29.27/quarter/user/addLogin?";

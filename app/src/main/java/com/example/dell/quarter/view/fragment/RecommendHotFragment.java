@@ -4,16 +4,13 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.dell.quarter.R;
 import com.example.dell.quarter.modle.bean.RecommendHotBean;
 import com.example.dell.quarter.presenter.RecommendHotPresenter;
 import com.example.dell.quarter.view.adapter.Recommend_Hod_RecycAdapter;
 import com.example.dell.quarter.view.interfaces.RecommendHot_p;
-import com.example.dell.quarter.view.view.GlideImageLoader;
-import com.youth.banner.Banner;
-import com.youth.banner.BannerConfig;
-import com.youth.banner.Transformer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +28,18 @@ public class RecommendHotFragment extends FatherFragment implements RecommendHot
 
     private RecommendHotPresenter re;
     private RecyclerView recyclerView;
+    private ImageView jiahao;
+    private ImageView lianjie;
+    private ImageView pingbi;
+    private ImageView jubao;
+//用来判断按钮的状态
+    int a=0;
+
 
     //找到控件
     @Override
     protected void initView(View view) {
+
         recyclerView = view.findViewById(R.id.reco_hot_recyc);
 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         //添加下划线
@@ -52,7 +57,15 @@ recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         re = new RecommendHotPresenter();
         re.getrecomm(this);
         re.gethttp(url,RecommendHotBean.class);
+
     }
+
+
+
+
+
+
+
 
     //找到布局
     @Override
