@@ -87,7 +87,7 @@ public class Recommend_Hod_RecycAdapter extends RecyclerView.Adapter{
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 15;
     }
 //加号点击事件
     public void getdianji(final ViewHodler viewhodler) {
