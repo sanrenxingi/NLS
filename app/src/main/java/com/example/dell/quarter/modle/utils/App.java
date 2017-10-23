@@ -2,6 +2,7 @@ package com.example.dell.quarter.modle.utils;
 
 import android.app.Application;
 
+import com.example.dell.quarter.BuildConfig;
 import com.example.dell.quarter.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -9,12 +10,14 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 
+import org.xutils.x;
+
 /**
  * Created by dell on 2017/10/19.
  */
 
 public class App extends Application{
-
+    private ImageLoader  mImageLoader;
     private UMShareAPI umShareAPI;
 
     {
@@ -24,6 +27,8 @@ public class App extends Application{
     public void onCreate() {
         super.onCreate();
         umShareAPI = UMShareAPI.get(this);
+        x.Ext.init(this);
+        x.Ext.setDebug(BuildConfig.DEBUG);
         init();
     }
 
@@ -42,7 +47,12 @@ public class App extends Application{
                    .defaultDisplayImageOptions(options)
                    .build();
 
-            ImageLoader.getInstance().init(con);
+        mImageLoader = ImageLoader.getInstance();
+        mImageLoader.init(con);
 
         }
+
+    public ImageLoader getmImageLoader() {
+        return mImageLoader;
+    }
 }

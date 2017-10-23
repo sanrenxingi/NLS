@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@mipmap/nybing"
-
-    tools:context="com.example.dell.quarter.view.activity.MainActivity">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/loginPanel"
         android:layout_width="400dp"
@@ -17,12 +11,12 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/loginimg"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:src="@mipmap/ic_launcher"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loginimg"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher"/>
         <EditText
             android:id="@+id/loginetzh"
             android:layout_width="match_parent"
@@ -30,11 +24,9 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginTop="15dp"
-            android:ems="10"
             android:hint="请输入您的手机号"
-            android:singleLine="true">
-
-            <requestFocus />
+            android:singleLine="true"
+            >
 
         </EditText>
 
@@ -45,10 +37,9 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginTop="15dp"
-            android:ems="10"
+            android:singleLine="true"
             android:hint="请输入您的密码"
-            android:password="true"
-            android:singleLine="true" />
+            android:password="true"/>
 
         <Button
             android:id="@+id/loginbtn"
@@ -92,6 +83,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>

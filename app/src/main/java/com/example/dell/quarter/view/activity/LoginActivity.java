@@ -29,8 +29,26 @@ public class LoginActivity extends BaseActivity implements RegisterInterfaceP_V{
     private EditText etmm;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    int setViewId() {
+        return R.layout.activity_main;
+    }
+
+    //new数据
+    @Override
+    void initData() {
+        loginPresenter = new LoginPresenter();
+    }
+     //找ID
+    @Override
+    void initView() {
+        etmm = findViewById(R.id.loginetmm);
+        etzh = findViewById(R.id.loginetzh);
+        zhuce = findViewById(R.id.zhuce);
+        btnlogin = findViewById(R.id.loginbtn);
+    }
+//逻辑操作
+    @Override
+    void initLogic() {
         //注册跳转
         zhuce.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,26 +80,6 @@ public class LoginActivity extends BaseActivity implements RegisterInterfaceP_V{
                 }
             }
         });
-
-    }
-
-    @Override
-    int setViewId() {
-        return R.layout.activity_main;
-    }
-
-    //new数据
-    @Override
-    void initData() {
-        loginPresenter = new LoginPresenter();
-    }
-     //找ID
-    @Override
-    void initView() {
-        etmm = findViewById(R.id.loginetmm);
-        etzh = findViewById(R.id.loginetzh);
-        zhuce = findViewById(R.id.zhuce);
-        btnlogin = findViewById(R.id.loginbtn);
     }
 
     @Override

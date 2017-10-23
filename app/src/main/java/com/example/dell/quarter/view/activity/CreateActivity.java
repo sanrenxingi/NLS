@@ -18,27 +18,6 @@ public class CreateActivity extends BaseActivity {
     private ImageView imgduanzi;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //视频的点击事件
-        imgvideo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(CreateActivity.this,VideoCreateActivity.class);
-                startActivity(intent);
-            }
-        });
-        //段子的点击事件
-        imgduanzi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            Intent intent=new Intent(CreateActivity.this,VideoCreateActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    @Override
     int setViewId() {
         return R.layout.activity_create;
     }
@@ -52,5 +31,25 @@ public class CreateActivity extends BaseActivity {
     void initView() {
         imgvideo = findViewById(R.id.imgvideo);
         imgduanzi = findViewById(R.id.imgduanzi);
+    }
+//逻辑操作
+    @Override
+    void initLogic() {
+        //视频的点击事件
+        imgvideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(CreateActivity.this,VideoCreateActivity.class);
+                startActivity(intent);
+            }
+        });
+        //段子的点击事件
+        imgduanzi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(CreateActivity.this,VideoCreateActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

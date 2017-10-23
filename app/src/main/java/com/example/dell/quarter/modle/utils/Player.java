@@ -20,10 +20,11 @@ public class Player implements OnBufferingUpdateListener,
         SurfaceHolder.Callback {
     private int videoWidth;
     private int videoHeight;
-    public MediaPlayer mediaPlayer;
     private SurfaceHolder surfaceHolder;
     private SeekBar skbProgress;
     private Timer mTimer=new Timer();
+    public MediaPlayer mediaPlayer;
+
     public Player(SurfaceView surfaceView,SeekBar skbProgress)
     {
         this.skbProgress=skbProgress;
@@ -108,7 +109,7 @@ public class Player implements OnBufferingUpdateListener,
     @Override
     public void surfaceCreated(SurfaceHolder arg0) {
         try {
-            mediaPlayer = new MediaPlayer();
+            mediaPlayer = VideoPlay.playVideo();
             mediaPlayer.setDisplay(surfaceHolder);
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             mediaPlayer.setOnBufferingUpdateListener(this);

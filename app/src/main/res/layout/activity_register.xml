@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@mipmap/nybimg"
-    tools:context="com.example.dell.quarter.view.activity.RegisterActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
     <LinearLayout android:id="@+id/loginPanel"
         android:background="@drawable/background_login_div"
         android:layout_height="300dp"
         android:layout_width="400dp"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-
-
-
+        android:orientation="vertical">
         <EditText android:id="@+id/etzh"
             android:layout_height="50dp"
             android:layout_width="match_parent"
@@ -27,7 +17,6 @@
             android:singleLine="true"
             android:layout_marginRight="50dp"
             android:layout_marginLeft="50dp">
-
             <requestFocus/>
 
         </EditText>
@@ -52,4 +41,4 @@
             android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

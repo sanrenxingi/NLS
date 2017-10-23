@@ -32,10 +32,28 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
     private HashMap<String, String> map;
     private Object code;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-       //注册的点击事件
+    int setViewId() {
+       return  R.layout.activity_register;
+    }
+
+    //new数据
+    @Override
+    void initData() {
+        registerPresenter = new RegisterPresenter();
+    }
+//找ID
+    @Override
+    void initView() {
+        etzh = findViewById(R.id.etzh);
+        etmm = findViewById(R.id.etmm);
+        btn = findViewById(R.id.btnzc);
+    }
+//逻辑操作
+    @Override
+    void initLogic() {
+        //注册的点击事件
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,24 +84,6 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
 
             }
         });
-    }
-
-    @Override
-    int setViewId() {
-       return  R.layout.activity_register;
-    }
-
-    //new数据
-    @Override
-    void initData() {
-        registerPresenter = new RegisterPresenter();
-    }
-//找ID
-    @Override
-    void initView() {
-        etzh = findViewById(R.id.etzh);
-        etmm = findViewById(R.id.etmm);
-        btn = findViewById(R.id.btnzc);
     }
 
     @Override

@@ -31,11 +31,18 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout rl;
     private ImageView chuangzuoimg;
     private View night;
+    private String name;
+    private String img;
+    private ImageView side_imageview;
+    private TextView side_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        Intent intent = getIntent();
+        name = intent.getStringExtra("name");
+        img = intent.getStringExtra("img");
         initview();
         initData();
         initbtn();
@@ -62,44 +69,11 @@ public class MainActivity extends AppCompatActivity {
         menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
         menu.setMenu(R.layout.slidingmenu_layout);
         rl= menu.findViewById(R.id.rl);
-        //点击出现登录页面
-        rl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in=new Intent(MainActivity.this,LoginMainActivity.class);
-                startActivity(in);
-            }
-        });
-    }
-
-    private void initData() {
-        menu = new SlidingMenu(this);
-        initbtn();
-    }
-
-    private void initview() {
-        bottomTabBar = (BottomTabBar) findViewById(R.id.bottom_tab_bar);
-        touxiangimg = (ImageView) findViewById(R.id.touxiangimg);
-        chuangzuoimg = (ImageView) findViewById(R.id.chuangzuoimg);
-
-
-    }
-
-    private void initbtn() {
-
-        bottomTabBar.init(getSupportFragmentManager())
-                .addTabItem("推荐", R.mipmap.tuijian_select, R.mipmap.tuijian_default, RecommendFragment.class)
-                .addTabItem("段子", R.mipmap.duanzi_select, R.mipmap.duanzi_default, CrossTalkFragment.class)
-                .addTabItem("视频", R.mipmap.video_select, R.mipmap.video_defaults, VideoFragment.class);
-
-    }
-    //找到控件
-    public void getMenuId() {
-        rl= menu.findViewById(R.id.rl);
         night = menu.findViewById(R.id.sice_night_mode);
-    }
-//侧拉菜单中控件的点击事件
-    public void getOnClick() {
+        side_imageview = menu.findViewById(R.id.side_imageview);
+        side_name = menu.findViewById(R.id.side_name);
+//        side_name.setText(name);
+//        ImageLoader.getInstance().displayImage(img,side_imageview);
         //点击出现登录页面
         rl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +103,41 @@ public class MainActivity extends AppCompatActivity {
                 recreate();//最后的这个绝对不能忘，不然切换回失效的
             }
         });
+    }
+
+    private void initData() {
+        menu = new SlidingMenu(this);
+        initbtn();
+    }
+
+    private void initview() {
+        bottomTabBar = (BottomTabBar) findViewById(R.id.bottom_tab_bar);
+        touxiangimg = (ImageView) findViewById(R.id.touxiangimg);
+        chuangzuoimg = (ImageView) findViewById(R.id.chuangzuoimg);
+        chuangzuoimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,CreateActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
+
+    private void initbtn() {
+
+        bottomTabBar.init(getSupportFragmentManager())
+                .addTabItem("推荐", R.mipmap.tuijian_select, R.mipmap.tuijian_default, RecommendFragment.class)
+                .addTabItem("段子", R.mipmap.duanzi_select, R.mipmap.duanzi_default, CrossTalkFragment.class)
+                .addTabItem("视频", R.mipmap.video_select, R.mipmap.video_defaults, VideoFragment.class);
+
+    }
+
+
+
+
+
+
+
+
 }

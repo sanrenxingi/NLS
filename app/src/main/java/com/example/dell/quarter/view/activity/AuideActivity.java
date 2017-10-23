@@ -31,11 +31,9 @@ private Handler handler=new Handler(){
         handler.sendEmptyMessageDelayed(900,1000);
     }
 };
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        handler.sendEmptyMessageDelayed(900,1000);
-    }
+
+
+
 
     @Override
     int setViewId() {
@@ -51,5 +49,10 @@ private Handler handler=new Handler(){
     void initView() {
         tv = findViewById(R.id.tv);
         tv.setText("4秒后");
+    }
+//逻辑操作
+    @Override
+    void initLogic() {
+        handler.sendEmptyMessageDelayed(900,1000);
     }
 }

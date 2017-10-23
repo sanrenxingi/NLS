@@ -25,7 +25,7 @@ public class RecommendAttentionAdapter extends RecyclerView.Adapter{
     }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-       View view= LayoutInflater.from(context).inflate(R.layout.recommend_attention_adapter,null);
+       View view= LayoutInflater.from(context).inflate(R.layout.recommend_attention_adapter,parent,false);
         return new ViewHodle(view);
     }
 

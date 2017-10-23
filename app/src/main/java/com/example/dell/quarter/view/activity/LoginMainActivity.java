@@ -19,12 +19,10 @@ public class LoginMainActivity extends BaseActivity {
     private UMShareAPI umShareAPI;
     private TextView tv;
     private ImageView qqimg;
-
+    private App app;
+//逻辑操作
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        App app= (App) getApplication();
-        umShareAPI = app.getUmShareAPI();
+    void initLogic() {
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,10 +44,9 @@ public class LoginMainActivity extends BaseActivity {
                     @Override
                     public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
                         if (share_media == SHARE_MEDIA.QQ) {
-
                             String name = map.get("name");
                             String img = map.get("iconurl");
-                          Intent intent=new Intent(LoginMainActivity.this,MainActivity.class);
+                            Intent intent=new Intent(LoginMainActivity.this,MainActivity.class);
                             intent.putExtra("name",name);
                             intent.putExtra("img",img);
                             startActivity(intent);
@@ -72,7 +69,6 @@ public class LoginMainActivity extends BaseActivity {
         });
 
     }
-
     @Override
     int setViewId() {
         return R.layout.activity_login_main;
@@ -80,7 +76,8 @@ public class LoginMainActivity extends BaseActivity {
 
     @Override
     void initData() {
-
+        app = (App) getApplication();
+        umShareAPI = app.getUmShareAPI();
     }
 
     @Override

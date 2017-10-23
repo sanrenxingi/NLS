@@ -6,16 +6,10 @@ import android.os.Bundle;
 import com.example.dell.quarter.R;
 
 /**
- * 段子页面
+ * 创作段子页面
  * 聂雁宾
  */
-public class Cross_talkActivity extends BaseActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
+public class Write_Cross_talkActivity extends BaseActivity {
 
     @Override
     int setViewId() {
@@ -29,6 +23,11 @@ public class Cross_talkActivity extends BaseActivity {
 
     @Override
     void initView() {
+
+    }
+//逻辑操作
+    @Override
+    void initLogic() {
 
     }
 }

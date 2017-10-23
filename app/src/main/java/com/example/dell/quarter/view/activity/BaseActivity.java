@@ -15,10 +15,13 @@ public abstract class BaseActivity extends Activity {
         setContentView(setViewId());
         initView();
         initData();
+        initLogic();
     }
    abstract  int setViewId();
 
      abstract void initData();
 
      abstract void initView();
+
+    abstract void initLogic();
 }

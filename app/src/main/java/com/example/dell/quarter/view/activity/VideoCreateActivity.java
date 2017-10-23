@@ -12,12 +12,6 @@ import com.example.dell.quarter.R;
 public class VideoCreateActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
-    @Override
     int setViewId() {
         return R.layout.activity_video_create;
     }
@@ -29,6 +23,11 @@ public class VideoCreateActivity extends BaseActivity {
 
     @Override
     void initView() {
+
+    }
+//逻辑操作
+    @Override
+    void initLogic() {
 
     }
 }

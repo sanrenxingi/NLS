@@ -28,14 +28,7 @@ public class VideoPlayActivity extends BaseActivity {
     private Button btncb;
     private String url;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //接收传来的参数
-        Intent intent = getIntent();
-        url = intent.getStringExtra("url");
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-    }
+
     @Override
     int setViewId() {
         return R.layout.activity_video_play;
@@ -59,6 +52,14 @@ public class VideoPlayActivity extends BaseActivity {
 
         skbProgress =  this.findViewById(R.id.skbProgress);
         skbProgress.setOnSeekBarChangeListener(new SeekBarChangeEvent());
+    }
+
+    @Override
+    void initLogic() {
+        //接收传来的参数
+        Intent intent = getIntent();
+        url = intent.getStringExtra("url");
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 
     class ClickEvent implements OnClickListener {
