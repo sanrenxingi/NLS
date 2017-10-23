@@ -18,5 +18,6 @@ public class Api {
     public static String VIDEOHOT="http://www.yulin520.com/a2a/impressApi/news/mergeList?sign=C7548DE604BCB8A17592EFB9006F9265&pageSize=15&gender=2&ts=1871746850&page=1";
     //视频附近
     public static String VIDEONEARBY="http://www.yulin520.com/a2a/impressApi/news/mergeList?sign=C7548DE604BCB8A17592EFB9006F9265&pageSize=15&gender=2&ts=1871746850&page=2";
+    public static String Cross_Talk_URL="http://172.17.29.27/quarter/character/select_character";
 
 }
