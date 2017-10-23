@@ -172,6 +172,7 @@
     </LinearLayout>
 <!--夜间模式-->
     <LinearLayout
+
         android:id="@+id/sice_night_mode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
