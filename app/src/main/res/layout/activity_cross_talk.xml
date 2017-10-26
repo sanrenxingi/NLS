@@ -1,12 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.dell.quarter.view.activity.Write_Cross_talkActivity">
+   <!--创作段子的布局-->
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="#03A9F4"
+       android:padding="10dp">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/cross_talk_tvback"
+           android:text="取消"
+           android:textColor="#ffffff"
+           android:textSize="20sp"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:textColor="#ffffff"
+           android:id="@+id/cross_talk_tvpublications"
+           android:text="发表文章"
+           android:textSize="20sp"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textColor="#ffffff"
+           android:id="@+id/cross_talk_tvpublish"
+           android:text="发表"
+           android:layout_alignParentRight="true"
+           android:textSize="20sp"/>
 
-
-
-
-</android.support.constraint.ConstraintLayout>
+   </RelativeLayout>
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:hint="请输入内容，禁止输入色情、暴力等违反国家法律的内容，违反者将以封号处理"
+    android:textColorHint="#D1D1D1"
+    />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cross_talk_img"
+        android:src="@mipmap/raw_1500020546"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cross_talk_tva"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="艾特Ta"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/raw_1499943790"/>
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/iphone_r_portrait"/>
+</RelativeLayout>
+</LinearLayout>

@@ -109,7 +109,7 @@ public class Player implements OnBufferingUpdateListener,
     @Override
     public void surfaceCreated(SurfaceHolder arg0) {
         try {
-            mediaPlayer = VideoPlay.playVideo();
+            mediaPlayer = new MediaPlayer();
             mediaPlayer.setDisplay(surfaceHolder);
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             mediaPlayer.setOnBufferingUpdateListener(this);

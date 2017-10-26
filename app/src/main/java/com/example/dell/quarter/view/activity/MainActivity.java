@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -21,6 +22,7 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
+ * 首页
  * 作者  聂雁宾
  */
 public class MainActivity extends AppCompatActivity {
@@ -43,12 +45,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
         img = intent.getStringExtra("img");
+        Log.e("dasdadadada","dasdadadadsad"+name);
+        Log.e("dasdadadada","dasdadadadsad"+img);
+        //初始化数据
         initview();
         initData();
+        //底部导航栏
         initbtn();
         //侧滑
         initMenu();
-
+        //头像点击侧滑
         touxiangimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,8 +78,10 @@ public class MainActivity extends AppCompatActivity {
         night = menu.findViewById(R.id.sice_night_mode);
         side_imageview = menu.findViewById(R.id.side_imageview);
         side_name = menu.findViewById(R.id.side_name);
-//        side_name.setText(name);
-//        ImageLoader.getInstance().displayImage(img,side_imageview);
+        //重新赋值
+        side_name.setText(name);
+        ImageLoader.getInstance().displayImage(img,side_imageview);
+//        ImageLoader.getInstance().displayImage(img,touxiangimg);
         //点击出现登录页面
         rl.setOnClickListener(new View.OnClickListener() {
             @Override

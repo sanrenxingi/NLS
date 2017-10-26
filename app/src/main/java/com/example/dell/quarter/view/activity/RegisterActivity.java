@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.dell.quarter.R;
 import com.example.dell.quarter.modle.bean.RegisterBean;
+import com.example.dell.quarter.modle.utils.ClassPathResource;
 import com.example.dell.quarter.presenter.RegisterPresenter;
 import com.example.dell.quarter.view.interfaces.RegisterInterfaceP_V;
 
@@ -60,26 +61,32 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
                 //逻辑判断方法
                 phone = etzh.getText().toString();
                 mima = etmm.getText().toString();
-                if(phone.equals("")){
-                    Toast.makeText(RegisterActivity.this,"手机号不能为空",Toast.LENGTH_SHORT).show();
-                }else if(mima.equals("")){
-                    Toast.makeText(RegisterActivity.this,"密码不能为空",Toast.LENGTH_SHORT).show();
-                }else if(!phone.equals("")&&!mima.equals("")){
-                    byte[] bytes = phone.getBytes();
-                    if(bytes.length==11){
-                        map = new HashMap<>();
-                        map.put("userPhone",phone);
-                        map.put("userPassword",mima);
-                        registerPresenter.loadDataFromServer(map);
-                        registerPresenter.setview(RegisterActivity.this);
-                        finish();
-                    }else{
-                        Toast.makeText(RegisterActivity.this,"手机号不为11位，请重新输入",Toast.LENGTH_SHORT).show();
-                        etzh.setText("");
-                        etmm.setText("");
-                    }
+                boolean mobileNO = ClassPathResource.isMobileNO(phone);
+                if(mobileNO==true){
+                    if(phone.equals("")){
+                        Toast.makeText(RegisterActivity.this,"手机号不能为空",Toast.LENGTH_SHORT).show();
+                    }else if(mima.equals("")){
+                        Toast.makeText(RegisterActivity.this,"密码不能为空",Toast.LENGTH_SHORT).show();
+                    }else if(!phone.equals("")&&!mima.equals("")){
+                        byte[] bytes = phone.getBytes();
+                        if(bytes.length==11){
+                            map = new HashMap<>();
+                            map.put("userPhone",phone);
+                            map.put("userPassword",mima);
+                            registerPresenter.loadDataFromServer(map);
+                            registerPresenter.attachView(RegisterActivity.this);
+                            finish();
+                        }else{
+                            Toast.makeText(RegisterActivity.this,"手机号不为11位，请重新输入",Toast.LENGTH_SHORT).show();
+                            etzh.setText("");
+                            etmm.setText("");
+                        }
 
+                    }
+                }else{
+                    Toast.makeText(RegisterActivity.this,"没有该手机号",Toast.LENGTH_SHORT).show();
                 }
+
 
 
             }
@@ -103,5 +110,11 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
     @Override
     public void onError(RegisterBean o) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        registerPresenter.dettachView();
     }
 }

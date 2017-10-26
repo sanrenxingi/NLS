@@ -41,7 +41,7 @@ public class VideoNearbyFragment extends FatherFragment implements RegisterInter
     void inDate() {
         videoNearbyPresenter = new VideoNearbyPresenter();
         videoNearbyPresenter.loadviewNearbyData();
-        videoNearbyPresenter.setview(this);
+        videoNearbyPresenter.attachView(this);
     }
 //布局
     @Override

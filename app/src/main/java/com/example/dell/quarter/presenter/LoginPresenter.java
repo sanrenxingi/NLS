@@ -44,9 +44,10 @@ public class LoginPresenter extends BasePresenter implements RegisterInterfaceP_
 
     }
 //关联
-    public void setview(LoginActivity loginActivity) {
-        this.loginActivity=loginActivity;
+    public void attachView(LoginActivity loginActivity) {
+       this.loginActivity=loginActivity;
     }
-
-
+    public void dettachView() {
+        this.loginActivity=null;
+    }
 }

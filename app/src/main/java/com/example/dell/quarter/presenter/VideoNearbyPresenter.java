@@ -38,7 +38,13 @@ public class VideoNearbyPresenter extends BasePresenter implements RegisterInter
 
     }
 
-    public void setview(VideoNearbyFragment view) {
-        this.view = view;
+
+    public void attachView(VideoNearbyFragment view) {
+      this.view=view;
+    }
+
+
+    public void dettachView() {
+        this.view=null;
     }
 }

@@ -40,7 +40,12 @@ public class VideoHotPresenter extends BasePresenter implements RegisterInterfac
 
     }
    //与V层关联
-    public void setview(VideoHotFragment view) {
-        this.view = view;
+
+    public void attachView(VideoHotFragment view) {
+        this.view=view;
+    }
+    public void dettachView() {
+        this.view=null;
+
     }
 }

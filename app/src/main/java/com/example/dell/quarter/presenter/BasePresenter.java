@@ -10,13 +10,14 @@ import com.example.dell.quarter.view.interfaces.IMvpView;
 public class BasePresenter<T> {
 
 
+    private T mt;
 
     public void attachView(T t) {
         //IMainView view = MainActivity
-
+        this.mt = t;
     }
 
     public void dettachView() {
-
+        this.mt = null;
     }
 }

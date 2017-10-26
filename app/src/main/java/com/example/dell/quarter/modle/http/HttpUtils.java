@@ -22,7 +22,7 @@ import okhttp3.Response;
 /**
  * Created by dell on 2017/10/17.
  * M层，实现与P层接收，传送数据
- * 聂雁宾
+ * 作者：聂雁宾
  */
 
 public class HttpUtils<T> {
@@ -50,17 +50,6 @@ public class HttpUtils<T> {
         }
 
         builder.url(url+"?" + buffer);
-        //第二种遍历方式
-//       for (String key:headers.keySet()){
-//           String value = headers.get(key);
-//           builder.addHeader(key,value);
-//       }
-        //第三种遍历方式
-//        Iterator<Map.Entry<String, String>> it = headers.entrySet().iterator();
-//        while (it.hasNext()) {
-//            Map.Entry<String , String> entry=it.next();
-//            builder.addHeader(entry.getKey(),entry.getValue());
-//        }
         Request request = builder.build();
         client.newCall(request).enqueue(new Callback() {
             @Override
@@ -100,9 +89,7 @@ public class HttpUtils<T> {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-
             }
-
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
@@ -114,7 +101,6 @@ public class HttpUtils<T> {
                 }
             }
         });
-
     }
     //视频热门，附近get请求
     public void doVideoHotget(String url, final Class<T> clazz) {
@@ -140,11 +126,9 @@ public class HttpUtils<T> {
                 }
             }
         });
-
     }
     //与P层关联
     public void onCallBack(RegisterInterfaceP_M call) {
         this.P_M = call;
     }
-
 }

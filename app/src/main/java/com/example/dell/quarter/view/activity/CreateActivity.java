@@ -47,7 +47,7 @@ public class CreateActivity extends BaseActivity {
         imgduanzi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(CreateActivity.this,VideoCreateActivity.class);
+                Intent intent=new Intent(CreateActivity.this,Write_Cross_talkActivity.class);
                 startActivity(intent);
             }
         });

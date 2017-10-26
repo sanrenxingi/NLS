@@ -27,9 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.RegisterActivity" />
-        <activity android:name=".view.activity.LoginActivity" />
-        <activity android:name=".view.activity.MainActivity" />
+        <activity android:name=".view.activity.RegisterActivity" android:theme="@style/TranslucentTheme"  />
+        <activity android:name=".view.activity.LoginActivity" android:theme="@style/TranslucentTheme" />
+        <activity android:name=".view.activity.MainActivity" android:launchMode="singleTask"/>
         <activity android:name=".view.activity.LoginMainActivity" />
         <activity android:name=".view.activity.VideoPlayActivity" />
         <activity

@@ -6,6 +6,7 @@ import com.example.dell.quarter.modle.bean.RegisterBean;
 import com.example.dell.quarter.modle.http.HttpUtils;
 import com.example.dell.quarter.modle.utils.Api;
 import com.example.dell.quarter.view.activity.RegisterActivity;
+import com.example.dell.quarter.view.fragment.VideoHotFragment;
 import com.example.dell.quarter.view.interfaces.RegisterInterfaceP_M;
 
 import java.util.HashMap;
@@ -41,8 +42,12 @@ public RegisterPresenter(){
     public void onError(RegisterBean o) {
 
     }
+    public void attachView(RegisterActivity view) {
+        this.view=view;
+    }
 
-    public void setview(RegisterActivity view) {
-        this.view = view;
+    @Override
+    public void dettachView() {
+        this.view=null;
     }
 }

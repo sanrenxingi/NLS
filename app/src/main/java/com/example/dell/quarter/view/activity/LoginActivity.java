@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.dell.quarter.R;
 import com.example.dell.quarter.modle.bean.LoginBean;
+import com.example.dell.quarter.modle.utils.ClassPathResource;
 import com.example.dell.quarter.presenter.LoginPresenter;
 import com.example.dell.quarter.view.interfaces.RegisterInterfaceP_V;
 
@@ -63,21 +64,27 @@ public class LoginActivity extends BaseActivity implements RegisterInterfaceP_V{
             public void onClick(View view) {
                 String phone = etzh.getText().toString();
                 String mima = etmm.getText().toString();
-                if(phone.equals("")){
-                    Toast.makeText(LoginActivity.this,"手机号不能为空",Toast.LENGTH_SHORT).show();
-                }else if(mima.equals("")){
-                    Toast.makeText(LoginActivity.this,"密码不能为空",Toast.LENGTH_SHORT).show();
-                }else if(!phone.equals("")&&!mima.equals("")){
-                    byte[] bytes = phone.getBytes();
-                    if(bytes.length==11){
-                        loginPresenter.loadLoginData(phone,mima);
-                        loginPresenter.setview(LoginActivity.this);
-                    }else {
-                        Toast.makeText(LoginActivity.this, "手机号不为11位，请重新输入", Toast.LENGTH_SHORT).show();
-                        etzh.setText("");
-                        etmm.setText("");
+                boolean mobileNO = ClassPathResource.isMobileNO(phone);
+                if(mobileNO==true){
+                    if(phone.equals("")){
+                        Toast.makeText(LoginActivity.this,"手机号不能为空",Toast.LENGTH_SHORT).show();
+                    }else if(mima.equals("")){
+                        Toast.makeText(LoginActivity.this,"密码不能为空",Toast.LENGTH_SHORT).show();
+                    }else if(!phone.equals("")&&!mima.equals("")){
+                        byte[] bytes = phone.getBytes();
+                        if(bytes.length==11){
+                            loginPresenter.loadLoginData(phone,mima);
+                            loginPresenter.attachView(LoginActivity.this);
+                        }else {
+                            Toast.makeText(LoginActivity.this, "手机号不为11位，请重新输入", Toast.LENGTH_SHORT).show();
+                            etzh.setText("");
+                            etmm.setText("");
+                        }
                     }
+                }else{
+                    Toast.makeText(LoginActivity.this,"手机号是黑户",Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }
@@ -98,5 +105,11 @@ public class LoginActivity extends BaseActivity implements RegisterInterfaceP_V{
     @Override
     public void onError(Object o) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        loginPresenter.dettachView();
     }
 }

@@ -38,7 +38,7 @@ public class VideoHotFragment extends FatherFragment implements RegisterInterfac
     void inDate() {
         videoHotPresenter = new VideoHotPresenter();
         videoHotPresenter.loadVideoHotData();
-        videoHotPresenter.setview(this);
+        videoHotPresenter.attachView(this);
     }
 //视图
     @Override
@@ -57,5 +57,11 @@ public class VideoHotFragment extends FatherFragment implements RegisterInterfac
     @Override
     public void onError(Object o) {
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        videoHotPresenter.dettachView();
     }
 }
