@@ -12,12 +12,17 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.example.dell.quarter.R;
 import com.example.dell.quarter.modle.utils.Player;
 import com.superplayer.library.SuperPlayer;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.media.UMWeb;
 
 /**
  * 视频播放类
@@ -38,6 +43,31 @@ public class VideoPlayActivity extends BaseActivity implements View.OnClickListe
     }
     @Override
     void initView() {
+        ImageView img_back=findViewById(R.id.img_back);
+        //返回的点击事件
+        img_back.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //关闭当前页面
+                finish();
+            }
+        });
+
+        ImageView img_fenxiang=findViewById(R.id.img_fenxiang);
+        //点击分享
+        img_fenxiang.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UMWeb web = new UMWeb("http://172.17.29.27/oppo.mp4");
+                web.setTitle("聂雁宾帅");//标题
+                web.setDescription("聂雁宾就是帅");//描述
+                new ShareAction(VideoPlayActivity.this)
+                        .withMedia(web)
+                        .setDisplayList(SHARE_MEDIA.SINA, SHARE_MEDIA.QQ,SHARE_MEDIA.WEIXIN)
+                        .setCallback(shareListener)
+                        .open();
+            }
+        });
         //接收传来的参数
         Intent intent = getIntent();
         isLive = intent.getBooleanExtra("isLive", false);
@@ -167,4 +197,44 @@ public class VideoPlayActivity extends BaseActivity implements View.OnClickListe
         }
         super.onBackPressed();
     }
+    //分享回调
+    private UMShareListener shareListener = new UMShareListener() {
+        /**
+         * @descrption 分享开始的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onStart(SHARE_MEDIA platform) {
+
+        }
+
+        /**
+         * @descrption 分享成功的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onResult(SHARE_MEDIA platform) {
+            Toast.makeText(VideoPlayActivity.this,"成功了",Toast.LENGTH_LONG).show();
+        }
+
+        /**
+         * @descrption 分享失败的回调
+         * @param platform 平台类型
+         * @param t 错误原因
+         */
+        @Override
+        public void onError(SHARE_MEDIA platform, Throwable t) {
+            Toast.makeText(VideoPlayActivity.this,"失败"+t.getMessage(),Toast.LENGTH_LONG).show();
+        }
+
+        /**
+         * @descrption 分享取消的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onCancel(SHARE_MEDIA platform) {
+            Toast.makeText(VideoPlayActivity.this,"取消了",Toast.LENGTH_LONG).show();
+
+        }
+    };
 }

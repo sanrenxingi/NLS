@@ -11,31 +11,35 @@
        android:layout_height="wrap_content"
        >
        <ImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:layout_width="35dp"
+           android:layout_height="35dp"
            android:id="@+id/img_back"
-           android:src="@mipmap/ic_launcher"
-           />
+           android:src="@mipmap/raw_1500019926"
+           android:layout_alignParentTop="true"
+           android:layout_alignParentStart="true" />
        <ImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:layout_width="40dp"
+           android:layout_height="40dp"
            android:id="@+id/img_hongxin"
+           android:layout_marginLeft="10dp"
            android:layout_toRightOf="@+id/img_back"
-           android:src="@mipmap/ic_launcher"
+           android:src="@mipmap/raw_1499933216"
            />
        <ImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:layout_width="35dp"
+           android:layout_height="35dp"
            android:id="@+id/img_liexin"
+           android:layout_marginLeft="10dp"
            android:layout_toRightOf="@+id/img_hongxin"
-           android:src="@mipmap/ic_launcher"
+           android:src="@mipmap/raw_1499933217"
            />
        <ImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:layout_width="35dp"
+           android:layout_height="35dp"
            android:id="@+id/img_fenxiang"
+           android:layout_marginLeft="10dp"
            android:layout_toRightOf="@+id/img_liexin"
-           android:src="@mipmap/ic_launcher"
+           android:src="@mipmap/raw_1499995160"
            />
    </RelativeLayout>
 
@@ -69,7 +73,26 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
-
+        android:text="OPPO经典彩铃"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="15963次播放   今天10：00"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="20dp"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@mipmap/raw_1500033586"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:text="拿起手机速来抢沙发吧！"/>
 
 </LinearLayout>
