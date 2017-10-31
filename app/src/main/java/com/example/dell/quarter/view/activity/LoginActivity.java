@@ -65,7 +65,6 @@ public class LoginActivity extends BaseActivity implements RegisterInterfaceP_V{
                 String phone = etzh.getText().toString();
                 String mima = etmm.getText().toString();
                 boolean mobileNO = ClassPathResource.isMobileNO(phone);
-                if(mobileNO==true){
                     if(phone.equals("")){
                         Toast.makeText(LoginActivity.this,"手机号不能为空",Toast.LENGTH_SHORT).show();
                     }else if(mima.equals("")){
@@ -80,10 +79,10 @@ public class LoginActivity extends BaseActivity implements RegisterInterfaceP_V{
                             etzh.setText("");
                             etmm.setText("");
                         }
+                    }else if(mobileNO==true){
+                        Toast.makeText(LoginActivity.this,"手机号是黑户",Toast.LENGTH_SHORT).show();
                     }
-                }else{
-                    Toast.makeText(LoginActivity.this,"手机号是黑户",Toast.LENGTH_SHORT).show();
-                }
+
 
             }
         });

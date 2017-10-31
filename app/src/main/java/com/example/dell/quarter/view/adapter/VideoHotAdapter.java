@@ -50,7 +50,8 @@ public class VideoHotAdapter extends RecyclerView.Adapter{
               public void onClick(View view) {
 //                  Toast.makeText(context,"点击"+position,Toast.LENGTH_SHORT).show();
                   Intent intent=new Intent(context, VideoPlayActivity.class);
-//                 intent.putExtra("url",mediaSrc);
+                  intent.putExtra("isLive",false);
+                  intent.putExtra("url","http://172.17.29.27/oppo.mp4");
                   context.startActivity(intent);
               }
           });
