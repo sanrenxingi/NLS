@@ -6,92 +6,156 @@
     android:layout_height="match_parent"
     android:padding="16dp">
     <!--头部-->
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:orientation="horizontal"
-    >
-    <!--头像-->
-    <com.example.dell.quarter.view.view.CircleImageView
-        android:id="@+id/recommend_recyc_Avatar"
-      android:layout_width="50dp"
-      android:layout_height="50dp"
-        app:border_color="#35B7F7"
-        app:border_width="1dp"
-        android:src="@drawable/yuyihu"/>
-    <!--名字日期-->
     <LinearLayout
-        android:layout_width="wrap_content"
-
-        android:orientation="vertical"
-        android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/recommend_recyc_name"
-        android:paddingTop="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="天蝎喝牛奶"
-        android:textSize="15sp"
-        android:textColor="#ff000d"
-        />
-        <TextView
-            android:id="@+id/recommend_recyc_data"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="2017-05-23  14:25"
-            android:textSize="15sp"
-
-            />
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/recommend_recyc_pingbi"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/pingbi"
-            android:layout_alignParentRight="true"
-            />
-        <ImageView
-            android:id="@+id/recommend_recyc_jubao"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/jubao"
-            android:layout_alignParentRight="true"
-            />
-        <ImageView
-            android:id="@+id/recommend_recyc_lianjie"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/lianjie"
-            android:layout_alignParentRight="true"
-            />
-    <ImageView
-        android:id="@+id/recommend_recyc_jiahao"
-        android:layout_width="50dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:src="@drawable/jiahao"
-        android:layout_alignParentRight="true"
-        />
-    </RelativeLayout>
+        android:orientation="horizontal"
+        >
+        <!--头像-->
+        <com.example.dell.quarter.view.view.CircleImageView
+            android:id="@+id/recommend_recyc_Avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:border_color="#35B7F7"
+            app:border_width="1dp"
+            android:src="@drawable/yuyihu"/>
+        <!--名字日期-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/recommend_recyc_name"
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="天蝎喝牛奶"
+                android:textSize="15sp"
+                android:textColor="#ff000d"
+                />
+            <TextView
+                android:id="@+id/recommend_recyc_data"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="2017-05-23  14:25"
+                android:textSize="15sp"
+
+                />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/recommend_recyc_pingbi"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/pingbi"
+                android:layout_alignParentRight="true"
+                />
+            <ImageView
+                android:id="@+id/recommend_recyc_jubao"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/jubao"
+                android:layout_alignParentRight="true"
+                />
+            <ImageView
+                android:id="@+id/recommend_recyc_lianjie"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/lianjie"
+                android:layout_alignParentRight="true"
+                />
+            <CheckBox
+                android:id="@+id/recommend_recyc_jiahao"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/handover"
+                android:button="@null"
+                android:checked="false"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
 
     </LinearLayout>
     <!--标题-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/recommend_recyc_yuyihu"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/jiade"
+            android:button="@null" />
+
+        <CheckBox
+            android:id="@+id/xihuan"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="16dp"
+            android:text="x111563"
+            android:button="@null"
+            android:checked="false"
+            android:textSize="10sp" />
+
+        <CheckBox
+            android:id="@+id/shoucang"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/xihuan"
+            android:layout_margin="5dp"
+            android:checked="false"
+            android:text="x11655"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/zhuanzai"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/shoucang"
+            android:layout_margin="5dp"
+            android:text="x11503"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/pinglun"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/zhuanzai"
+            android:layout_margin="5dp"
+            android:text="x111.1万"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/recommend_recyc_anniu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/kaishianniu"
+            android:visibility="gone" />
+    </RelativeLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="天气美美的，适合郊游"
         />
-      <ImageView
-          android:layout_marginTop="10dp"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:src="@drawable/yuyihu"
-          />
+
     <LinearLayout
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
