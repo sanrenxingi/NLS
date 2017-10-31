@@ -114,6 +114,8 @@ public class Recommend_Hod_RecycAdapter extends RecyclerView.Adapter{
                         @Override
                         public void onClick(View view) {
                             Intent intent=new Intent(context, VideoPlayActivity.class);
+                            intent.putExtra("isLive",false);
+                            intent.putExtra("url","http://172.17.29.27/oppo.mp4");
                             context.startActivity(intent);
                         }
                     });
@@ -160,27 +162,27 @@ public class Recommend_Hod_RecycAdapter extends RecyclerView.Adapter{
     //更换侧边收藏等
     private void setce(final ViewHodler viewhodler) {
         //喜欢图片
-        SpannableString ss = new SpannableString("1122\n1056");
-        Drawable red_heart = context.getResources().getDrawable(R.drawable.my_live);
-        //图片大小 d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
-        red_heart.setBounds(0, 0,30, 30);
-        //创建ImageSpan
-        ImageSpan span = new ImageSpan(red_heart, ImageSpan.ALIGN_BASELINE);
-        //用ImageSpan替换文本
-        ss.setSpan(span, 0,5, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        viewhodler.xihuan.setText(ss);
+//        SpannableString ss = new SpannableString("1122\n1056");
+//        Drawable red_heart = context.getResources().getDrawable(R.drawable.my_live);
+//        //图片大小 d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
+//        red_heart.setBounds(0, 0,30, 30);
+//        //创建ImageSpan
+//        ImageSpan span = new ImageSpan(red_heart, ImageSpan.ALIGN_BASELINE);
+//        //用ImageSpan替换文本
+//        ss.setSpan(span, 0,5, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+//        viewhodler.xihuan.setText(ss);
         /**
          * 收藏
          */
-        SpannableString ss1 = new SpannableString("1122\n803");
-        Drawable d1 = context.getResources().getDrawable(R.drawable.my_shoucang);
-        //图片大小 d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
-        d1.setBounds(0, 0,30, 30);
-        //创建ImageSpan
-        ImageSpan span1 = new ImageSpan(d1, ImageSpan.ALIGN_BASELINE);
-        //用ImageSpan替换文本
-        ss1.setSpan(span1, 0,5, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        viewhodler.shoucang.setText(ss1);
+//        SpannableString ss1 = new SpannableString("1122\n803");
+//        Drawable d1 = context.getResources().getDrawable(R.drawable.my_shoucang);
+//        //图片大小 d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
+//        d1.setBounds(0, 0,30, 30);
+//        //创建ImageSpan
+//        ImageSpan span1 = new ImageSpan(d1, ImageSpan.ALIGN_BASELINE);
+//        //用ImageSpan替换文本
+//        ss1.setSpan(span1, 0,5, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+//        viewhodler.shoucang.setText(ss1);
 
         /**
          * 转载

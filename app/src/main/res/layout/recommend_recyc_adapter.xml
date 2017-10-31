@@ -86,7 +86,10 @@
     <!--标题-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/recommend_recyc_pingbi"
+        android:layout_toStartOf="@+id/recommend_recyc_pingbi">
 
         <CheckBox
             android:id="@+id/recommend_recyc_yuyihu"
@@ -99,45 +102,62 @@
 
         <CheckBox
             android:id="@+id/xihuan"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
+           android:layout_marginRight="150dp"
+            android:layout_margin="5dp"
             android:layout_marginTop="16dp"
-            android:text="x111563"
+            android:background="@drawable/my_live"
             android:button="@null"
+            android:gravity="center_vertical"
             android:checked="false"
-            android:textSize="10sp" />
+           />
+        <TextView
+            android:id="@+id/te11583"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11583"
+            android:layout_below="@id/xihuan"/>
 
         <CheckBox
             android:id="@+id/shoucang"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:button="@null"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/xihuan"
+            android:layout_below="@id/te11583"
             android:layout_margin="5dp"
             android:checked="false"
-            android:text="x11655"
+          android:background="@drawable/my_shoucang"
             android:textSize="10sp" />
+        <TextView
+            android:id="@+id/te11655"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11655"
+            android:layout_below="@id/shoucang"/>
 
         <TextView
             android:id="@+id/zhuanzai"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/shoucang"
-            android:layout_margin="5dp"
+            android:layout_below="@id/te11655"
+
+            android:layout_alignLeft="@id/te11655"
             android:text="x11503"
             android:textSize="10sp" />
 
         <TextView
             android:id="@+id/pinglun"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_below="@id/zhuanzai"
-            android:layout_margin="5dp"
+            android:layout_alignLeft="@id/te11655"
             android:text="x111.1万"
             android:textSize="10sp" />
 
