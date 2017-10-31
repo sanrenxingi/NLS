@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
         img = intent.getStringExtra("img");
-        Log.e("dasdadadada","dasdadadadsad"+name);
-        Log.e("dasdadadada","dasdadadadsad"+img);
+        Log.e("聂雁宾","dasdadadadsad"+name);
+        Log.e("聂雁宾","dasdadadadsad"+img);
         //初始化数据
         initview();
         initData();
@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
         side_imageview = menu.findViewById(R.id.side_imageview);
         side_name = menu.findViewById(R.id.side_name);
         //重新赋值
-        side_name.setText(name);
-        ImageLoader.getInstance().displayImage(img,side_imageview);
+//        side_name.setText(name);
+//        ImageLoader.getInstance().displayImage(img,side_imageview);
 //        ImageLoader.getInstance().displayImage(img,touxiangimg);
         //点击出现登录页面
         rl.setOnClickListener(new View.OnClickListener() {

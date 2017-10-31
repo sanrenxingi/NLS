@@ -1,9 +1,6 @@
 package com.example.dell.quarter.view.activity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
+import android.net.Uri;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +12,9 @@ import com.example.dell.quarter.modle.bean.RegisterBean;
 import com.example.dell.quarter.modle.utils.ClassPathResource;
 import com.example.dell.quarter.presenter.RegisterPresenter;
 import com.example.dell.quarter.view.interfaces.RegisterInterfaceP_V;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.HashMap;
 
@@ -36,12 +36,14 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
 
     @Override
     int setViewId() {
+        Fresco.initialize(this);//初始化在加载布局的上面
        return  R.layout.activity_register;
     }
 
     //new数据
     @Override
     void initData() {
+
         registerPresenter = new RegisterPresenter();
     }
 //找ID
@@ -50,6 +52,16 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
         etzh = findViewById(R.id.etzh);
         etmm = findViewById(R.id.etmm);
         btn = findViewById(R.id.btnzc);
+        SimpleDraweeView simpleDraweeView= this.findViewById(R.id.sdv);
+        DraweeController draweeController = Fresco.newDraweeControllerBuilder()
+                .setAutoPlayAnimations(true)
+                //设置uri,加载本地的gif资源
+                .setUri(Uri.parse("res://"+getPackageName()+"/"+R.raw.nyba))
+                .build();
+        //设置Controller
+        simpleDraweeView.setController(draweeController);
+
+
     }
 //逻辑操作
     @Override
@@ -84,7 +96,7 @@ public class RegisterActivity extends BaseActivity implements RegisterInterfaceP
 
                     }
                 }else{
-                    Toast.makeText(RegisterActivity.this,"没有该手机号",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"手机号是黑户",Toast.LENGTH_SHORT).show();
                 }
 
 
