@@ -12,6 +12,8 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Toast;
@@ -32,6 +34,7 @@ public class VideoPlayActivity extends BaseActivity implements View.OnClickListe
     private String url;
     private boolean isLive;
     private SuperPlayer player;
+    private CheckBox img_liexin;
 
     @Override
     int setViewId() {
@@ -52,7 +55,30 @@ public class VideoPlayActivity extends BaseActivity implements View.OnClickListe
                 finish();
             }
         });
-
+        final CheckBox img_hongxin=findViewById(R.id.img_hongxin);
+        //点赞
+        img_hongxin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+             if(b){
+                img_liexin.setClickable(false);
+             }else{
+                 img_liexin.setClickable(true);
+             }
+            }
+        });
+        //踩
+        img_liexin = findViewById(R.id.img_liexin);
+        img_liexin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    img_hongxin.setClickable(false);
+                }else{
+                    img_hongxin.setClickable(true);
+                }
+            }
+        });
         ImageView img_fenxiang=findViewById(R.id.img_fenxiang);
         //点击分享
         img_fenxiang.setOnClickListener(new OnClickListener() {
@@ -66,6 +92,15 @@ public class VideoPlayActivity extends BaseActivity implements View.OnClickListe
                         .setDisplayList(SHARE_MEDIA.SINA, SHARE_MEDIA.QQ,SHARE_MEDIA.WEIXIN)
                         .setCallback(shareListener)
                         .open();
+            }
+        });
+        ImageView img_touxiang=findViewById(R.id.img_touxiang);
+        //点击跳转到个人页面
+        img_touxiang.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(VideoPlayActivity.this,PersonageActivity.class);
+                startActivity(intent);
             }
         });
         //接收传来的参数
